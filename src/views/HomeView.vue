@@ -117,8 +117,8 @@
 
       <div class="our-facilities" style="margin: 0px 100px;">
       <h2 class="text-start mb-5">Fasilitas Kami</h2>
-      <div class="facilities ">
-        <carousel :margin="0">
+      <div class="facilities">
+        <VueSlickCarousel v-bind="settingsCarousel">
         <CardFacilities
           v-for="(facility, index) in facilityItems"
           :key="index"
@@ -127,9 +127,66 @@
           :subtitle="facility.subtitle"
           :description="facility.description"
         />
-      </carousel>
+      </VueSlickCarousel>
       </div>
       </div>
+
+
+      <section class="section home-feature p-5">
+      <div class="container  d-flex" style="background-color: #ffffff;border-radius:30px;box-shadow: 0px 4px 16px 0px rgba(70, 133, 133, 0.24);
+padding: 60px 30px;margin: 0px 50px">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-12">
+            <div class="row">
+              <!-- ***** Features Small Item Start ***** -->
+              <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s">
+                <div class="features-small-item d-flex" style="gap:10px;">
+                  <div class="icon mb-3">
+                    <i><img width="80" src="@/assets/Home/advantage-1.png" alt=""></i>
+                  </div>
+                  <div class="advantage-content text-start">
+                    <h5 class="features-title">Lokasi</h5>
+                  <p> Anda dapat melihat lokasi terkini pedagang keliling</p>
+                  </div>
+                  
+                </div>
+              </div>
+              <!-- ***** Features Small Item End ***** -->
+
+              <!-- ***** Features Small Item Start ***** -->
+              <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s">
+                <div class="features-small-item d-flex" style="gap:10px;">
+                  <div class="icon mb-3">
+                    <i><img width="80" src="@/assets/Home/advantage-1.png" alt=""></i>
+                  </div>
+                  <div class="advantage-content text-start">
+                    <h5 class="features-title">Lokasi</h5>
+                  <p> Anda dapat melihat lokasi terkini pedagang keliling</p>
+                  </div>
+                  
+                </div>
+              </div>
+              <!-- ***** Features Small Item End ***** -->
+
+              <!-- ***** Features Small Item Start ***** -->
+              <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s">
+                <div class="features-small-item d-flex" style="gap:10px;">
+                  <div class="icon mb-3">
+                    <i><img width="80" src="@/assets/Home/advantage-1.png" alt=""></i>
+                  </div>
+                  <div class="advantage-content text-start">
+                    <h5 class="features-title">Lokasi</h5>
+                  <p> Anda dapat melihat lokasi terkini pedagang keliling</p>
+                  </div>
+                  
+                </div>
+              </div>
+              <!-- ***** Features Small Item End ***** -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
       </div>
     </div>
@@ -139,17 +196,55 @@
 <script>
 import CardSignature from "@/components/CardSignature.vue";
 import CardFacilities from "@/components/CardFacilities.vue";
-import carousel from 'vue-owl-carousel'
+import VueSlickCarousel from 'vue-slick-carousel'
+  import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+  import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 export default {
   name: "HomeView",
   components: {
     CardSignature,
     CardFacilities,
-    carousel
+    VueSlickCarousel
   },
   data() {
     return {
       // Dummy data for CardSignature
+      settingsCarousel:[
+      {
+  "dots": true,
+  "infinite": false,
+  "speed": 500,
+  "slidesToShow": 4,
+  "slidesToScroll": 4,
+  "initialSlide": 0,
+  "responsive": [
+    {
+      "breakpoint": 1024,
+      "settings": {
+        "slidesToShow": 3,
+        "slidesToScroll": 3,
+        "infinite": true,
+        "dots": true
+      }
+    },
+    {
+      "breakpoint": 600,
+      "settings": {
+        "slidesToShow": 2,
+        "slidesToScroll": 2,
+        "initialSlide": 2
+      }
+    },
+    {
+      "breakpoint": 480,
+      "settings": {
+        "slidesToShow": 1,
+        "slidesToScroll": 1
+      }
+    }
+  ]
+}
+      ],
       signatureItems: [
         {
           imageSrc: require("@/assets/Home/signature-1.png"),
@@ -215,8 +310,10 @@ export default {
           subtitle: "(Indoor & Outdoor)",
           description: "Parkir luas untuk kenyamanan pengunjung.",
         },
-      ]
+      ],
+      
     };
+    
   },
   methods: {
     // Method to return the correct alignment class based on the index
@@ -329,4 +426,29 @@ export default {
   margin: 0 20px;
 }
 
+
+button.slick-prev:before, button.slick-next:before {
+      background: red !important;
+}
+
+
+ .advantage{
+    width: 1096px;
+    border-radius: 30px;
+    box-shadow: 0.3px 0.3px 0.3px #393535;
+    height: 226px;
+    margin: auto;
+    margin-top: 200px;
+    padding: 20px;
+}
+
+ .features-title{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+.advantage-content p{
+  font-size: 12px;
+}
 </style>

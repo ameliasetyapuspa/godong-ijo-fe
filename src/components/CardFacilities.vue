@@ -1,12 +1,15 @@
 <template>
-    <div class="card ms-4" style="width: 200px;">
-      <img :src="imgSrc" :alt="imgAlt" style="width: 200px; height: 120px;" class="card-img-top img-fluid">
+    <div style="padding: 20px;">
+        <div class="card ms-4" style="width: 200px; min-height: 250px; margin-right: 50px;">
+      <img :src="imgSrc" style="width: 200px; height: 120px;" class="card-img-top img-fluid">
       <div class="card-body d-flex flex-column align-items-center">
         <h4 style="font-size: 14px;">{{ title }}</h4>
         <h5 style="font-size: 12px;">{{ subtitle }}</h5>
         <p style="font-size: 12px;" class="card-text">{{ description }}</p>
       </div>
     </div>
+    </div>
+   
     </template>
     
     <script>
@@ -16,11 +19,6 @@
           type: String,
           required: true,
           default: "@/assets/Home/facilities-1.png"
-        },
-        imgAlt: {
-          type: String,
-          required: true,
-          default: "Card image"
         },
         title: {
           type: String,
