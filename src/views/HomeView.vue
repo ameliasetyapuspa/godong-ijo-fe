@@ -105,7 +105,7 @@
           >
             <div>
               <h1>Kami menyediakan berbagai jenis hidangan dan minuman</h1>
-              <button class="btn explore-btn">Lihat Menu ></button>
+              <button class="btn btn-success explore-btn" @click="$router.push('/waterfall-resto')" style="cursor: pointer;">Lihat Menu ></button>
             </div>
           </div>
           <div
@@ -389,7 +389,6 @@ export default {
           ],
         },
       ],
-      // Dummy data for CardSignature
       settingsCarousel: [
         {
           dots: true,
