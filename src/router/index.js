@@ -6,6 +6,7 @@ import FishingLake from '@/views/FishingLake.vue'
 import Ecotainment from '@/views/Ecotainment.vue'
 import FunctionRoom from '@/views/FunctionRoom.vue'
 import VerticalGarden from '@/views/VerticalGarden.vue'
+import ContactUs from '@/views/ContactUs.vue'
 
 
 Vue.use(VueRouter)
@@ -40,6 +41,11 @@ const routes = [
     path: '/vertical-garden',
     name: 'FunctionRoom',
     component: VerticalGarden
+  },
+  {
+    path: '/contact-us',
+    name: 'ContactUs',
+    component: ContactUs
   },
  
 ]

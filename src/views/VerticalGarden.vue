@@ -144,7 +144,7 @@
           </div>
         </div>
 
-        <div class="place-type" style="margin: 100px">
+        <div class="place-type">
           <h3>Penempatan Vertical Garden</h3>
           <p class="mb-5">
             Godong Ijo menawarkan pembuatan vertical garden baik Outdoor maupun
@@ -152,31 +152,75 @@
             indoor
           </p>
 
-          <div class="outdoor text-start">
-            <h4 class="mb-5">{{ type }} Vertical Garden</h4>
+          <div v-for="(place, index) in places" :key="index" class="text-start">
+            <h4 class="mb-5">{{ place.type }} Vertical Garden</h4>
             <div class="row">
               <CardVerticalGarden
-                v-for="(place, index) in places[0].environmentEdu"
-                :key="index"
-                :imgSrc="place.imgSrc"
-                :placeName="place.placeName"
-                :placeDescription="place.placeDescription"
+                v-for="(item, itemIndex) in place.placeList"
+                :key="itemIndex"
+                :imgSrc="item.imgSrc"
+                :placeName="item.placeName"
+                :placeDescription="item.placeDescription"
                 class="col-12 col-md-6 col-lg-4 mb-4"
               />
             </div>
           </div>
 
-          <div class="indoor text-start">
-            <h4 class="mb-5">{{ type }} Vertical Garden</h4>
+          <div class="moss text-start">
+            <h4 class="mb-4">Moss</h4>
+
             <div class="row">
-              <CardVerticalGarden
-                v-for="(place, index) in places[0].environmentEdu"
-                :key="index"
-                :imgSrc="place.imgSrc"
-                :placeName="place.placeName"
-                :placeDescription="place.placeDescription"
-                class="col-12 col-md-6 col-lg-4 mb-4"
-              />
+              <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                <p style="font-size: 14px; text-align: justify">
+                  Moss adalah produk vertical garden khusus dalam ruang
+                  (indoor), dimana kami menggunakan lumut varietas Cladonia
+                  Rangiferina atau dikenal dengan reindeer lichen yang telah
+                  diawetkan dengan system pengawetan khusus sehingga tekstur dan
+                  ke alamian varietasnya tetap terjaga. Moss Wall ini khusus
+                  diimport untuk memenuhi kebutuhan Indoor Greenwall yang minim
+                  perawatan dan memiliki exclusivitas tinggi bagi yang ingin
+                  memilikinya.
+                </p>
+                <p style="font-size: 14px; text-align: justify">
+                  Preserved Moss Greenwall ini lebih mudah untuk di pasang dan
+                  diseuaikan seusai bentuk, design dan kebutuhan interior anda
+                  dan menghadirkan langsung nuansa alami yang Asri. Dengan
+                  memiliki 25 warna yang berbeda Preserved Moss Green Wall ini
+                  bisa menyesuaikan dan memadukan kreatifitas yang lebih indah
+                  dan menhadirkan ‘Creativity Green Environment’ lebih dekat
+                  dengan Anda.
+                </p>
+              </div>
+              <div
+                class="col-12 col-sm-12 col-md-6 col-lg-6 d-flex justify-content-center align-items-center order-first order-md-0 mb-sm-4 mb-4"
+              >
+                <img
+                  style="width: 80%; border-radius: 20px"
+                  src="@/assets/VerticalGarden/moss.png"
+                  alt="Moss"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="moss text-start mt-5">
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-6 col-lg-6 mb-4">
+                <h4 class="mb-4">Keunggulan Moss</h4>
+                <img
+                  style="width: 90%; border-radius: 20px"
+                  src="@/assets/VerticalGarden/keunggulan.png"
+                  alt="Moss"
+                />
+              </div>
+              <div class="col-12 col-sm-12 col-md-6 col-lg-6 mb-sm-4 mb-4">
+                <h4 class="mb-4">25 Variant Moss</h4>
+                <img
+                  style="width: 90%; border-radius: 20px"
+                  src="@/assets/VerticalGarden/variant-moss.png"
+                  alt="Moss"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -186,8 +230,10 @@
 </template>
 
 <script>
+import CardVerticalGarden from "@/components/CardVerticalGarden.vue";
 export default {
   name: "VerticalGardenView",
+  components: { CardVerticalGarden },
   data() {
     return {
       places: [
