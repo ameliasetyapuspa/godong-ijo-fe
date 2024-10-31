@@ -34,10 +34,10 @@
     <div class="our-location mb-5">
           <div class="row gx-5">
             <div
-              class="col-12 col-sm-12 col-md-5 d-flex flex-column align-items-start justify-content-center"
+              class="col-12 col-sm-12 col-md-5 d-flex flex-column align-items-center  justify-content-center"
             >
-              <h4 style="font-size: 30px; font-weight: 600">Lokasi Kami</h4>
-              <p>Temukan Kami dengan Mudah</p>
+              <h4 style="font-size: 30px; font-weight: 600; text-align: start;" class="text-start">Lokasi Kami</h4>
+              <p class="text-start">Temukan Kami dengan Mudah</p>
               <a
                 href="https://www.google.com/maps/dir/?api=1&destination=-6.370738912767085,106.74511347285247"
                 target="_blank"
@@ -67,6 +67,41 @@
         </div>
 
         <div class="social-media">
+          <div class="row">
+          <div
+              class="col-12 col-sm-12 col-md-5 d-flex flex-column align-items-center text-light justify-content-center"
+            >
+              <h4 style="font-size: 40px; font-weight: 600; text-align: start;" class="text-start">Social Media</h4>
+              <p class="text-start">Terhubung dengan Kami di Platform Favorit Anda</p>
+          
+          
+            </div>
+            <div
+              class="col-12 col-sm-12 col-md-7 d-flex align-items-center justify-content-center"
+            >
+              <div class="socmed-container d-flex" style="gap: 40px;">
+
+               
+                  <div class="socmed-img  d-flex flex-column justify-content-center align-items-center text-center text-light">
+                    <img width="80" src="@/assets/ContactUs/instagram.png" alt="IG">
+                    <p style="font-size: 30px;">Instagram</p>
+                  </div>
+                  <div class="socmed-img  d-flex flex-column justify-content-center align-items-center text-center text-light">
+                    <img width="80" src="@/assets/ContactUs/youtube.png" alt="IG">
+                    <p style="font-size: 30px;">Youtube</p>
+                  </div>
+                  <div class="socmed-img  d-flex flex-column justify-content-center align-items-center text-center text-light">
+                    <img width="80" src="@/assets/ContactUs/tiktok.png" alt="IG">
+                    <p style="font-size: 30px;">Tiktok</p>
+                  </div>
+                
+
+              </div>
+            </div>
+          </div>
+
+
+
             
         </div>
 
@@ -126,9 +161,17 @@ export default {
 .our-location {
   margin: auto;
   background: #4685853d;
-  width: 1000px;
-
-  border-radius: 10px;
   padding: 80px;
+  margin: 100px;
+  border-radius: 10px;
+ 
+}
+
+.social-media{
+  padding: 150px;
+  background-color: #034A4A;
+  border-radius: 20px;
+margin: 100px;
+ 
 }
 </style>
